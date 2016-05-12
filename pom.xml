@@ -33,6 +33,7 @@
 					<!-- TODO: revisar para que se incluyan directorios -->
 					<excludes>
 						<exclude>**/integracion/*.java</exclude>
+						<exclude>**/aceptacion/*.java</exclude>
 					</excludes>
 					<includes>
 						<include>**/unitarias/*.java</include>
