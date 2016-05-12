@@ -8,8 +8,8 @@
 	<modules>
 		<module>../ParejasModelo</module>
 		<module>../ParejasInterfaces</module>
+        <module>../ParejasPersistencia</module>
 		<module>../ParejasNegocio</module>
-		<module>../ParejasPersistencia</module>
 		<module>../ParejasWeb</module>
 	</modules>
 
@@ -23,9 +23,24 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			<!-- Pruebas unitarias -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.7.1</version>
+                <configuration>
+                    <argLine>${surefireArgLine}</argLine>
+                    <!-- TODO: revisar para que se incluyan directorios -->
+                    <excludes>
+                        <exclude>**/integracion/*.java</exclude>
+                    </excludes>
+                    <includes>
+                        <include>**/unitarias/*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
-	
 	<dependencies>
 		<!-- testing -->
 		<dependency>
